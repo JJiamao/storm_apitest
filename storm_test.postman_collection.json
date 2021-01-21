@@ -1,0 +1,2068 @@
+{
+	"info": {
+		"_postman_id": "9cc304e7-4d95-4e51-bcd7-daf84a492c34",
+		"name": "storm_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "storm-001",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response id is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.id).to.equal(\"1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-002",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"response code is corrtect\", function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"response msg is corrtect\", function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stom-003",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-004",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=-1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-005",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=admin",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-006",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response id is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.id).to.equal(\"1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-007",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-008",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-009",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=-1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-010",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=admin",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "admin"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-011",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser?userid=9999999999",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "9999999999"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-012",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response id is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.id).to.equal(\"1\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-013",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"请设置Content-Type为application/json\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json213",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-014",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"请设置Content-Type为application/json\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=1",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-015",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2?userid=2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					],
+					"query": [
+						{
+							"key": "userid",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-016",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://{{domain}}/getuser2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getuser2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-017",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response id is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.userid).to.equal(1);\r",
+							"});\r",
+							"\r",
+							"pm.test('response money is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.money).to.equal(1000);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\":1\r\n}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-018",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"参数错误\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "userid=1"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-019",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\":2\r\n}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-020",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-021",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\":\"admin\"\r\n}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-022",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    pm.expect(pm.response.code).to.equal(405);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userid\":1\r\n}"
+				},
+				"url": {
+					"raw": "http://{{domain}}/getmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"getmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-023",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.success).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/j",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-024",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"需要认证\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/j",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-025",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"认证失败\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "1234561",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/j",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-026",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/j",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-027",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.sucess).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/j",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888.88",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-028",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    pm.expect(pm.response.code).to.equal(405);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/j",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-029",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response success is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.success).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-030",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"cookie认证失败\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-031",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"cookie非法\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token123458",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-032",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(500);\r",
+							"});\r",
+							"\r",
+							"pm.test('response msg is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.msg).to.equal(\"没有这个用户\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-033",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response success is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.success).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888.88",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-034",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    pm.expect(pm.response.code).equal(405)\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "userid",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/setmoney2",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"setmoney2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-035",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response success is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.success).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Administrator/Desktop/storm测试项目/1.txt"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-036",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response success is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.success).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Administrator/Desktop/storm测试项目/1.doc"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-037",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response success is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.success).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Administrator/Desktop/storm测试项目/1.jpg"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "storm-038",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('response code is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test('response success is correct', function(){\r",
+							"    var data = pm.response.json();\r",
+							"    pm.expect(data.success).to.equal(\"成功\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "token=token12345",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/Administrator/Desktop/storm测试项目/中文.txt"
+						},
+						{
+							"key": "money",
+							"value": "888",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://{{domain}}/uploadfile",
+					"protocol": "http",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"uploadfile"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
